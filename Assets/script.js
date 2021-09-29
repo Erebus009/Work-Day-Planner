@@ -4,8 +4,7 @@ let saveBtn = document.querySelector('.save')
 $(document).ready(function(){
     
     
-
-
+    
 
 // ----Time interval ----//
 
@@ -25,7 +24,7 @@ var DayTime = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
 applyColor();
 
 function applyColor() {
-    var currentHour = 12;
+    var currentHour = 10;
     
     for(var a = 0; a < DayTime.length; a++) {
     
@@ -53,31 +52,34 @@ function applyColor() {
 
 // when saveBtn is clicked it stores values in textarea to localstroage depending on which hour block. 
 $(".save").on("click", function() {
-    var DayTime = $(this).parent().attr("id");
-    var textContent = $(".usertext").val().trim();
+    var timeOfday = $(this).parent().attr("id");
+    var textContent = $(this).siblings('input').val();
 
-    localStorage.setItem(DayTime, textContent);
-    console.log(DayTime, textContent);
+
+    localStorage.setItem(timeOfday, textContent);
+    console.log(timeOfday, textContent);
+    console.log('clicked');
+    
 });
 
+// local storage to get item for each div id.
 
-// local storage to get item for each div id. 
 
+  $("#hour9").children("input").val(localStorage.getItem("hour9"));
 
-  $("#hour-9").children(".usertext").val(localStorage.getItem("hour-9"));
+  $("#hour10").children("input").val(localStorage.getItem("hour10"));
 
-  $("#hour-10").children("usertext").val(localStorage.getItem("hour-10"));
+  $("#hour11").children("input").val(localStorage.getItem("hour11"));
 
-  $("#hour-11").children("usertext").val(localStorage.getItem("hour-11"));
+  $("#hour12").children("input").val(localStorage.getItem("hour12"));
 
-  $("#hour-12").children(".usertext").val(localStorage.getItem("hour-12"));
+  $("#hour13").children("input").val(localStorage.getItem("hour13"));
 
-  $("#hour-13").children(".usertext").val(localStorage.getItem("hour-13"));
+  $("#hour14").children("input").val(localStorage.getItem("hour14"));
 
-  $("#hour-14").children(".usertext").val(localStorage.getItem("hour-14"));
+  $("#hour15").children("input").val(localStorage.getItem("hour15"));
 
-  $("#hour-15").children(".usertext").val(localStorage.getItem("hour-15"));
+  $("#hour16").children("input").val(localStorage.getItem("hour16"));
 
-  $("#hour-16").children(".usertext").val(localStorage.getItem("hour-16"));
+  $("#hour17").children("input").val(localStorage.getItem("hour17"));
 
-  $("#hour-17").children(".usertext").val(localStorage.getItem("gour-17"));
