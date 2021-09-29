@@ -48,3 +48,13 @@
     content: "💾";
     font-size: 1.4em;
 }
+
+.green {
+    background-color: var(--green);
+}
+.red {
+    background-color: var(--red);
+}
+.gray {
+    background-color: var(--gray);
+}
