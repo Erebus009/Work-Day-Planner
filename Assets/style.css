@@ -1,0 +1,50 @@
+:root{
+    --green : rgb(60, 224, 60);
+    --red:rgb(233, 42, 42);
+    --gray: rgb(158, 158, 158);
+
+}
+
+
+.row {
+    height: 80px;
+}
+.hour {
+    padding-top: 25px;
+    border-top: black solid 1px;
+    border-right: solid 2px black;
+}
+#time{
+    font-size: 2em;
+    font-family: inherit;
+    color:black;
+}
+
+.container {
+    width: 100%;
+
+}
+.jumbotron{
+    background-color: rgb(160, 236, 220);
+    
+}
+.main{
+    margin-top: 20px;
+    font-size: 18px;
+}
+#hour {
+    align-items: center;
+    justify-content: center;
+}
+
+.save {
+    background-color: rgb(119, 127, 238);
+    border: solid 1px black;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-left: solid black 3px;
+}
+.save::after{
+    content: "💾";
+    font-size: 1.4em;
+}
