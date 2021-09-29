@@ -24,7 +24,7 @@ var DayTime = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
 applyColor();
 
 function applyColor() {
-    var currentHour = 10;
+    var currentHour = moment().format('H');
     
     for(var a = 0; a < DayTime.length; a++) {
     
