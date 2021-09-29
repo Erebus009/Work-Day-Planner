@@ -1,14 +1,9 @@
 let saveBtn = document.querySelector('.save')
 
-
+// when dom is ready to load fucntion inside. 
 $(document).ready(function(){
     
-    $('.save').on('click', function(){
-        var value =$(this).siblings('.usertext').val();
-        var time= $(this).parent().attr('id');
-        
-
-    });
+    
 
 
 
@@ -22,16 +17,15 @@ $(document).ready(function(){
 
 
 
-var timeCheck = new Date();
-console.log(timeCheck.getHours());
 
-// -------Fucntions to set backjground color ---?? 
+
+// Functions to set apply color based on hour with a for loop to check against the current hour to tell which color to set. ?? 
 
 var DayTime = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
 applyColor();
 
 function applyColor() {
-    var currentHour = moment().format('H');
+    var currentHour = 12;
     
     for(var a = 0; a < DayTime.length; a++) {
     
@@ -42,7 +36,7 @@ function applyColor() {
         }
         else if (parseInt(DayTime[a]) < currentHour) {
         
-        $('#' + DayTime[a]).attr("style", "background-color: lightgray");
+        $('#' + DayTime[a]).addClass('gray')
     
         }
         else if (parseInt(DayTime[a]) == currentHour) {
@@ -57,6 +51,7 @@ function applyColor() {
     }
 })
 
+// when saveBtn is clicked it stores values in textarea to localstroage depending on which hour block. 
 $(".save").on("click", function() {
     var DayTime = $(this).parent().attr("id");
     var textContent = $(".usertext").val().trim();
@@ -64,6 +59,10 @@ $(".save").on("click", function() {
     localStorage.setItem(DayTime, textContent);
     console.log(DayTime, textContent);
 });
+
+
+// local storage to get item for each div id. 
+
 
   $("#hour-9").children(".usertext").val(localStorage.getItem("hour-9"));
 
